@@ -17,9 +17,9 @@ type NumVal = 1 | 2 | 3 | NumVal[];
  * (2) Interfaces can extend from other interfaces
  */
 
-// export interface HasInternationalPhoneNumber extends HasPhoneNumber {
-//   countryCode: string;
-// }
+export interface HasInternationalPhoneNumber extends HasPhoneNumber {
+  countryCode: string;
+}
 
 /**
  * (3) they can also be used to describe call signatures
