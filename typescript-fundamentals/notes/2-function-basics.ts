@@ -43,29 +43,31 @@ console.log(sum(3, 4, 6)); // 13
 
 // (5) we can even provide multiple function signatures
 // "overload signatures"
-// function contactPeople(method: "email", ...people: HasEmail[]): void;
-// function contactPeople(method: "phone", ...people: HasPhoneNumber[]): void;
+function contactPeople(method: "email", ...people: HasEmail[]): void;
+function contactPeople(method: "phone", ...people: HasPhoneNumber[]): void;
 
 // "function implementation"
-// function contactPeople(
-//   method: "email" | "phone",
-//   ...people: (HasEmail | HasPhoneNumber)[]
-// ): void {
-//   if (method === "email") {
-//     (people as HasEmail[]).forEach(sendEmail);
-//   } else {
-//     (people as HasPhoneNumber[]).forEach(sendTextMessage);
-//   }
-// }
+function contactPeople(
+  method: "email" | "phone",
+  ...people: (HasEmail | HasPhoneNumber)[]
+): void {
+  if (method === "email") {
+    (people as HasEmail[]).forEach(sendEmail);
+  } else {
+    (people as HasPhoneNumber[]).forEach(sendTextMessage);
+  }
+}
 
-// ✅ email works
-// contactPeople("email", { name: "foo", email: "" });
+//contactPeople()
 
-// ✅ phone works
-// contactPeople("phone", { name: "foo", phone: 12345678 });
+//✅ email works
+contactPeople("email", { name: "foo", email: "" });
 
-// 🚨 mixing does not work
-// contactPeople("email", { name: "foo", phone: 12345678 });
+//✅ phone works
+contactPeople("phone", { name: "foo", phone: 12345678 });
+
+//🚨 mixing does not work
+contactPeople("email", { name: "foo", phone: 12345678 });
 
 // (6) the lexical scope (this) of a function is part of its signature
 
