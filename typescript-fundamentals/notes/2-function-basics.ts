@@ -11,14 +11,14 @@ function sendEmail(to: HasEmail): { recipient: string; body: string } {
 }
 
 // (2) or the arrow-function variant
-// const sendTextMessage = (
-//   to: HasPhoneNumber
-// ): { recipient: string; body: string } => {
-//   return {
-//     recipient: `${to.name} <${to.phone}>`,
-//     body: "You're pre-qualified for a loan!"
-//   };
-// };
+const sendTextMessage = (
+  to: HasPhoneNumber
+): { recipient: string; body: string } => {
+  return {
+    recipient: `${to.name} <${to.phone}>`,
+    body: "You're pre-qualified for a loan!"
+  };
+};
 
 // (3) return types can almost always be inferred
 // function getNameParts(contact: { name: string }) {
