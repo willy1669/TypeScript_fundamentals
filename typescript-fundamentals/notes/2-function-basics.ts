@@ -38,8 +38,8 @@ function getNameParts(contact: { name: string }) {
 }
 
 // (4) rest params work just as you'd think. Type must be array-ish
-// const sum = (...vals: number[]) => vals.reduce((sum, x) => sum + x, 0);
-// console.log(sum(3, 4, 6)); // 13
+const sum = (...vals: number[]) => vals.reduce((sum, x) => sum + x, 0);
+console.log(sum(3, 4, 6)); // 13
 
 // (5) we can even provide multiple function signatures
 // "overload signatures"
