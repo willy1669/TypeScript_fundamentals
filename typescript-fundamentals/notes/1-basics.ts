@@ -117,30 +117,30 @@ x = "hello mars";
  * Sometimes we have a type that can be one of several things
  */
 
-// export interface HasPhoneNumber {
-//   name: string;
-//   phone: number;
-// }
+export interface HasPhoneNumber {
+  name: string;
+  phone: number;
+}
 
-// export interface HasEmail {
-//   name: string;
-//   email: string;
-// }
+export interface HasEmail {
+  name: string;
+  email: string;
+}
 
-// let contactInfo: HasEmail | HasPhoneNumber =
-//   Math.random() > 0.5
-//     ? {
-//         // we can assign it to a HasPhoneNumber
-//         name: "Mike",
-//         phone: 3215551212
-//       }
-//     : {
-//         // or a HasEmail
-//         name: "Mike",
-//         email: "mike@example.com"
-//       };
+let contactInfo: HasEmail | HasPhoneNumber =
+  Math.random() > 0.5
+    ? {
+        // we can assign it to a HasPhoneNumber
+        name: "Mike",
+        phone: 3215551212
+      }
+    : {
+        // or a HasEmail
+        name: "Mike",
+        email: "mike@example.com"
+      };
 
-// contactInfo.name; // NOTE: we can only access the .name property  (the stuff HasPhoneNumber and HasEmail have in common)
+ contactInfo.name; // NOTE: we can only access the .name property  (the stuff HasPhoneNumber and HasEmail have in common)
 
 /**
  * (15) Intersection types
