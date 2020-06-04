@@ -80,26 +80,26 @@ const phoneDict: PhoneNumberDict = {
  * (6) they may be used in combination with other types
  */
 
-// // augment the existing PhoneNumberDict
-// // i.e., imported it from a library, adding stuff to it
-// interface PhoneNumberDict {
-//   home: {
-//     /**
-//      * (7) interfaces are "open", meaning any declarations of the
-//      * -   same name are merged
-//      */
-//     areaCode: number;
-//     num: number;
-//   };
-//   office: {
-//     areaCode: number;
-//     num: number;
-//   };
-// }
+// augment the existing PhoneNumberDict
+// i.e., imported it from a library, adding stuff to it
+interface PhoneNumberDict {
+  home: {
+    /**
+     * (7) interfaces are "open", meaning any declarations of the
+     * -   same name are merged
+     */
+    areaCode: number;
+    num: number;
+  };
+  office: {
+    areaCode: number;
+    num: number;
+  };
+}
 
-// phoneDict.home;   // definitely present
-// phoneDict.office; // definitely present
-// phoneDict.mobile; // MAYBE present
+phoneDict.home;   // definitely present
+phoneDict.office; // definitely present
+phoneDict.mobile; // MAYBE present
 
 // == TYPE ALIASES vs INTERFACES == //
 
