@@ -25,19 +25,19 @@ export interface HasInternationalPhoneNumber extends HasPhoneNumber {
  * (3) they can also be used to describe call signatures
  */
 
-// interface ContactMessenger1 {
-//   (contact: HasEmail | HasPhoneNumber, message: string): void;
-// }
+interface ContactMessenger1 {
+  (contact: HasEmail | HasPhoneNumber, message: string): void;
+}
 
-// type ContactMessenger2 = (
-//   contact: HasEmail | HasPhoneNumber,
-//   message: string
-// ) => void;
+type ContactMessenger2 = (
+  contact: HasEmail | HasPhoneNumber,
+  message: string
+) => void;
 
 // // NOTE: we don't need type annotations for contact or message
-// const emailer: ContactMessenger1 = (_contact, _message) => {
+const emailer: ContactMessenger1 = (_contact, _message) => {
 //   /** ... */
-// };
+};
 
 /**
  * (4) construct signatures can be described as well
