@@ -29,23 +29,23 @@ export class Contact implements HasEmail {
  * - private - only me
  */
 
-// class ParamPropContact implements HasEmail {
-//   constructor(public name: string, public email: string = "no email") {
-//     // nothing needed
-//   }
-// }
+class ParamPropContact implements HasEmail {
+  constructor(public name: string, public email: string = "no email") {
+    // nothing needed
+  }
+}
 
 /**
  * (4) Class fields can have initializers (defaults)
  */
-// class OtherContact implements HasEmail, HasPhoneNumber {
-//   protected age: number = 0;
-//   // private password: string;
-//   constructor(public name: string, public email: string, public phone: number) {
-//     // () password must either be initialized like this, or have a default value
-//     // this.password = Math.round(Math.random() * 1e14).toString(32);
-//   }
-// }
+class OtherContact implements HasEmail, HasPhoneNumber {
+  protected age: number = 0;
+  private password: string;
+  constructor(public name: string, public email: string, public phone: number) {
+    // () password must either be initialized like this, or have a default value
+    this.password = Math.round(Math.random() * 1e14).toString(32);
+  }
+}
 
 /**
  * (5) TypeScript even allows for abstract classes, which have a partial implementation
