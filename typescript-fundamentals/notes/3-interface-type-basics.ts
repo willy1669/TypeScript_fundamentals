@@ -69,10 +69,10 @@ interface PhoneNumberDict {
       };
 }
 
-// const phoneDict: PhoneNumberDict = {
-//   office: { areaCode: 321, num: 5551212 },
-//   home: { areaCode: 321, num: 5550010 } // try editing me
-// };
+const phoneDict: PhoneNumberDict = {
+  office: { areaCode: 321, num: 5551212 },
+  home: { areaCode: 321, num: 5550010 } // try editing me
+};
 
 // at most, a type may have one string and one number index signature
 
