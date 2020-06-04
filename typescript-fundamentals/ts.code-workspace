@@ -68,6 +68,9 @@
     "code-runner.executorMap": {
       "javascript": "node",
       "typescript": "node_modules/.bin/ts-node"
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
     }
   },
   "extensions": {
