@@ -43,9 +43,9 @@ const emailer: ContactMessenger1 = (_contact, _message) => {
  * (4) construct signatures can be described as well
  */
 
-// interface ContactConstructor {
-//   new (...args: any[]): HasEmail | HasPhoneNumber;
-// }
+interface ContactConstructor {
+  new (...args: any[]): HasEmail | HasPhoneNumber;
+}
 
 /**
  * (5) index signatures describe how a type will respond to property access
@@ -59,20 +59,20 @@ const emailer: ContactMessenger1 = (_contact, _message) => {
  * }
  */
 
-// interface PhoneNumberDict {
-//   // arr[0],  foo['myProp']
-//   [numberName: string]:
-//     | undefined
-//     | {
-//         areaCode: number;
-//         num: number;
-//       };
-// }
+interface PhoneNumberDict {
+  // arr[0],  foo['myProp']
+  [numberName: string]:
+    | undefined
+    | {
+        areaCode: number;
+        num: number;
+      };
+}
 
-// const phoneDict: PhoneNumberDict = {
-//   office: { areaCode: 321, num: 5551212 },
-//   home: { areaCode: 321, num: 5550010 } // try editing me
-// };
+const phoneDict: PhoneNumberDict = {
+  office: { areaCode: 321, num: 5551212 },
+  home: { areaCode: 321, num: 5550010 } // try editing me
+};
 
 // at most, a type may have one string and one number index signature
 
