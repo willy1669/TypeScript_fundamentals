@@ -43,9 +43,9 @@ const emailer: ContactMessenger1 = (_contact, _message) => {
  * (4) construct signatures can be described as well
  */
 
-// interface ContactConstructor {
-//   new (...args: any[]): HasEmail | HasPhoneNumber;
-// }
+interface ContactConstructor {
+  new (...args: any[]): HasEmail | HasPhoneNumber;
+}
 
 /**
  * (5) index signatures describe how a type will respond to property access
