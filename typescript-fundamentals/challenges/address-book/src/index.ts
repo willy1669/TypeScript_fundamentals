@@ -1,11 +1,19 @@
-export class AddressBook {
-  contacts = [];
+interface Person {
+  firstName?: string,
+  middleName?: string,
+  lastName?: string,
 
-  addContact(contact) {
+}
+
+
+export class AddressBook {
+  contacts: Person [] = [];
+
+  addContact(contact: Person) {
     this.contacts.push(contact);
   }
 
-  findContactByName(filter) {
+  findContactByName(filter: Person) {
     return this.contacts.filter(c => {
       if (
         typeof filter.firstName !== "undefined" &&
@@ -24,7 +32,7 @@ export class AddressBook {
   }
 }
 
-export function formatDate(date) {
+export function formatDate(date: Date) {
   return (
     date
       .toISOString()
