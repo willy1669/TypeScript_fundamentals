@@ -51,30 +51,30 @@ class OtherContact implements HasEmail, HasPhoneNumber {
  * (5) TypeScript even allows for abstract classes, which have a partial implementation
  */
 
-// abstract class AbstractContact implements HasEmail, HasPhoneNumber {
-//   public abstract phone: number; // must be implemented by non-abstract subclasses
+abstract class AbstractContact implements HasEmail, HasPhoneNumber {
+  public abstract phone: number; // must be implemented by non-abstract subclasses
 
-//   constructor(
-//     public name: string,
-//     public email: string // must be public to satisfy HasEmail
-//   ) {}
+  constructor(
+    public name: string,
+    public email: string // must be public to satisfy HasEmail
+  ) {}
 
-//   abstract sendEmail(): void; // must be implemented by non-abstract subclasses
-// }
+  abstract sendEmail(): void; // must be implemented by non-abstract subclasses
+}
 
 /**
  * (6) implementors must "fill in" any abstract methods or properties
  */
-// class ConcreteContact extends AbstractContact {
-//   constructor(
-//     public phone: number, // must happen before non property-parameter arguments
-//     name: string,
-//     email: string
-//   ) {
-//     super(name, email);
-//   }
-//   sendEmail() {
-//     // mandatory!
-//     console.log("sending an email");
-//   }
-// }
+class ConcreteContact extends AbstractContact {
+  constructor(
+    public phone: number, // must happen before non property-parameter arguments
+    name: string,
+    email: string
+  ) {
+    super(name, email);
+  }
+  sendEmail() {
+    // mandatory!
+    console.log("sending an email");
+  }
+}
