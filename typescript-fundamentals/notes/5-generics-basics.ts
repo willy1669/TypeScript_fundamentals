@@ -17,8 +17,9 @@ interface WrappedValue<X> {
   value: X;
 }
 
-let val: WrappedValue<string[]> = { value?: string };
-val.v
+let val: WrappedValue<string[]> = { value: [] };
+val.value;
+
 
 /**
  * we can name these params whatever we want, but a common convention
@@ -31,13 +32,13 @@ val.v
  */
 
 // // for Array.prototype.filter
-// interface FilterFunction<T = any> {
-//   (val: T): boolean;
-// }
+interface FilterFunction<T = any> {
+  (val: T): boolean;
+}
 
-// const stringFilter: FilterFunction<string> = val => typeof val === "string";
-// stringFilter(0); // 🚨 ERROR
-// stringFilter("abc"); // ✅ OK
+const stringFilter: FilterFunction<string> = val => typeof val === "string";
+stringFilter(0); // 🚨 ERROR
+stringFilter("abc"); // ✅ OK
 
 // // can be used with any value
 // const truthyFilter: FilterFunction = val => val;
