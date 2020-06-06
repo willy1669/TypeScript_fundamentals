@@ -21,7 +21,7 @@ export function mapDict<T, S>(
 mapDict({
     a: 'a',
     b: 'b'
-}, (str) => [str])
+}, (str) => ({val: str}))
 
 // Array.prototype.reduce, but for Dict
 export function reduceDict() {}
