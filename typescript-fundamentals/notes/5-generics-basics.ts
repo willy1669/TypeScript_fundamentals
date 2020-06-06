@@ -89,12 +89,12 @@ const myDict = arrayToDict([
  * (5) Type parameters are associated with scopes, just like function arguments
  */
 
-// function startTuple<T>(a: T) {
-//   return function finishTuple<U>(b: U) {
-//     return [a, b] as [T, U];
-//   };
-// }
-// const myTuple = startTuple(["first"])(42);
+function startTuple<T>(a: T) {
+  return function finishTuple<U>(b: U) {
+    return [a, b] as [T, U];
+  };
+}
+const myTuple = startTuple(["first"])(42);
 
 /**
  * (6) When to use generics
