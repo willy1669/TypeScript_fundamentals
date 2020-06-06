@@ -72,18 +72,18 @@ resolveOrTimeout(fetch(""), 3000);
  * (4) Type parameters can have constraints
  */
 
-// function arrayToDict<T extends { id: string }>(array: T[]): { [k: string]: T } {
-//   const out: { [k: string]: T } = {};
-//   array.forEach(val => {
-//     out[val.id] = val;
-//   });
-//   return out;
-// }
+function arrayToDict<T extends { id: string }>(array: T[]): { [k: string]: T } {
+  const out: { [k: string]: T } = {};
+  array.forEach(val => {
+    out[val.id] = val;
+  });
+  return out;
+}
 
-// const myDict = arrayToDict([
-//   { id: "a", value: "first", lisa: "Huang" },
-//   { id: "b", value: "second" }
-// ]);
+const myDict = arrayToDict([
+  { id: "a", value: "first", lisa: "Huang" },
+  { id: "b", value: "second" }
+]);
 
 /**
  * (5) Type parameters are associated with scopes, just like function arguments
