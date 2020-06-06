@@ -41,11 +41,11 @@ stringFilter(0); // 🚨 ERROR
 stringFilter("abc"); // ✅ OK
 
 // // can be used with any value
-// const truthyFilter: FilterFunction = val => val;
-// truthyFilter(0); // false
-// truthyFilter(1); // true
-// truthyFilter(""); // false
-// truthyFilter(["abc"]); // true
+const truthyFilter: FilterFunction = val => val;
+truthyFilter(0); // false
+truthyFilter(1); // true
+truthyFilter(""); // false
+truthyFilter(["abc"]); // true
 
 /**
  * (3) You don't have to use exactly your type parameter as an arg
