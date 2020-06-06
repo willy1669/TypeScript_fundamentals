@@ -7,18 +7,18 @@ import { HasEmail } from "./1-basics";
 
 // param determines the value of x
 function wrappedValue(x: any) {
-//   return {
-//     value: x
-//   };
-// // }
+  return {
+    value: x
+  };
+}
 
 // // type param determines the type of x
-// interface WrappedValue<X> {
-//   value: X;
-// }
+interface WrappedValue<X> {
+  value: X;
+}
 
-// let val: WrappedValue<string[]> = { value: [] };
-// val.value;
+let val: WrappedValue<string[]> = { value?: string };
+val.v
 
 /**
  * we can name these params whatever we want, but a common convention
