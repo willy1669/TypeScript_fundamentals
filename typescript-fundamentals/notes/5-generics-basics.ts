@@ -7,18 +7,19 @@ import { HasEmail } from "./1-basics";
 
 // param determines the value of x
 function wrappedValue(x: any) {
-//   return {
-//     value: x
-//   };
-// // }
+  return {
+    value: x
+  };
+}
 
 // // type param determines the type of x
-// interface WrappedValue<X> {
-//   value: X;
-// }
+interface WrappedValue<X> {
+  value: X;
+}
 
-// let val: WrappedValue<string[]> = { value: [] };
-// val.value;
+let val: WrappedValue<string[]> = { value: [] };
+val.value;
+
 
 /**
  * we can name these params whatever we want, but a common convention
@@ -31,13 +32,13 @@ function wrappedValue(x: any) {
  */
 
 // // for Array.prototype.filter
-// interface FilterFunction<T = any> {
-//   (val: T): boolean;
-// }
+interface FilterFunction<T = any> {
+  (val: T): boolean;
+}
 
-// const stringFilter: FilterFunction<string> = val => typeof val === "string";
-// stringFilter(0); // 🚨 ERROR
-// stringFilter("abc"); // ✅ OK
+const stringFilter: FilterFunction<string> = val => typeof val === "string";
+stringFilter(0); // 🚨 ERROR
+stringFilter("abc"); // ✅ OK
 
 // // can be used with any value
 // const truthyFilter: FilterFunction = val => val;
