@@ -62,9 +62,13 @@ if (isHasEmail(myUnknown)) {
 }
 
 // my most common guard
-// function isDefined<T>(arg: T | undefined): arg is T {
-//   return typeof arg !== "undefined";
-// }
+function isDefined<T>(arg: T | undefined): arg is T {
+  return typeof arg !== "undefined";
+}
+
+const list = ['a', 'b', 'c', undefined, 'd'];
+const filtered = list.filter(isDefined)
+
 
 // // NEW TS 3.7: assertion-based type guards!
 // function assertIsStringArray(arr: any[]): asserts arr is string[] {
