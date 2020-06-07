@@ -10,7 +10,7 @@ namespace baz {
 }
 
 // // how to test for a value
-// const x = foo; // foo is in the value position (RHS).
+const x = foo; // foo is in the value position (RHS).
 
 // // how to test for a type
 // const y: bar = {}; // bar is in the type position (LHS).
