@@ -13,7 +13,7 @@ namespace baz {
 const x = foo; // foo is in the value position (RHS).
 
 // // how to test for a type
-// const y: bar = {}; // bar is in the type position (LHS).
+const y: bar = {}; // bar is in the type position (LHS).
 
 // // how to test for a namespace (hover over baz symbol)
 // baz;
