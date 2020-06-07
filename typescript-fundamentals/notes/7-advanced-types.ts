@@ -52,8 +52,8 @@ let b: EventualType<number[]>;
 /**
  * (4) Partial allows us to make all properties on an object optional
  */
-// type MayHaveEmail = Partial<HasEmail>;
-// const me: MayHaveEmail = {}; // everything is optional
+type MayHaveEmail = Partial<HasEmail>;
+const me: MayHaveEmail = {}; // everything is optional
 
 /**
  * (5) Pick allows us to select one or more properties from an object type
