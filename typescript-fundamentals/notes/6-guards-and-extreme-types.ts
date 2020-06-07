@@ -19,10 +19,10 @@ myUnknown.foo;
  * Anys are good for areas of our programs where we want maximum flexibility
  * Example: sometimes a Promise<any> is fine when we don't care at all about the resolved value
  */
-// async function logWhenResolved(p: Promise<any>) {
-//   const val = await p;
-//   console.log("Resolved to: ", val);
-// }
+async function logWhenResolved(p: Promise<any>) {
+  const val = await p;
+  console.log("Resolved to: ", val);
+}
 
 /**
  * (3) When to use `unknown`
