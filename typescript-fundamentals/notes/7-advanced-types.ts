@@ -21,8 +21,8 @@ contact("phone", { name: "foo", phone: 3213332222 });
 contact("fax", { fax: 1231 });
 
 // // we can get all values by mapping through all keys
-// type AllCommKeys = keyof CommunicationMethods;
-// type AllCommValues = CommunicationMethods[keyof CommunicationMethods];
+type AllCommKeys = keyof CommunicationMethods;
+type AllCommValues = CommunicationMethods[keyof CommunicationMethods];
 
 /**
  * (2) Type queries allow us to obtain the type from a value using typeof
