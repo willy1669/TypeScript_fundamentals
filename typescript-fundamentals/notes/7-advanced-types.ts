@@ -59,10 +59,10 @@ const me: MayHaveEmail = {}; // everything is optional
  * (5) Pick allows us to select one or more properties from an object type
  */
 
-// type HasThen<T> = Pick<Promise<T>, "then" | "catch">;
+type HasThen<T> = Pick<Promise<T>, "then" | "catch">;
 
-// let hasThen: HasThen<number> = Promise.resolve(4);
-// hasThen.then;
+let hasThen: HasThen<number> = Promise.resolve(4);
+hasThen.then;
 
 /**
  * (6) Extract lets us obtain a subset of types that are assignable to something
