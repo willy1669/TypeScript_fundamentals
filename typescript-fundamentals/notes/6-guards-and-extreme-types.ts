@@ -99,36 +99,36 @@ bb = aa; // 🚨 yikes
  */
 
 /* two branded types, each with "brand" and "unbrand" functions */
-// interface BrandedA {
-//   __this_is_branded_with_a: "a";
-// }
-// function brandA(value: string): BrandedA {
-//   return (value as unknown) as BrandedA;
-// }
-// function unbrandA(value: BrandedA): string {
-//   return (value as unknown) as string;
-// }
+interface BrandedA {
+  __this_is_branded_with_a: "a";
+}
+function brandA(value: string): BrandedA {
+  return (value as unknown) as BrandedA;
+}
+function unbrandA(value: BrandedA): string {
+  return (value as unknown) as string;
+}
 
-// interface BrandedB {
-//   __this_is_branded_with_b: "b";
-// }
-// function brandB(value: { abc: string }): BrandedB {
-//   return (value as unknown) as BrandedB;
-// }
-// function unbrandB(value: BrandedB): { abc: string } {
-//   return (value as unknown) as { abc: string };
-// }
+interface BrandedB {
+  __this_is_branded_with_b: "b";
+}
+function brandB(value: { abc: string }): BrandedB {
+  return (value as unknown) as BrandedB;
+}
+function unbrandB(value: BrandedB): { abc: string } {
+  return (value as unknown) as { abc: string };
+}
 
-// let secretA = brandA("This is a secret value");
-// let secretB = brandB({ abc: "This is a different secret value" });
+let secretA = brandA("This is a secret value");
+let secretB = brandB({ abc: "This is a different secret value" });
 
-// secretA = secretB; // ✅ No chance of getting these mixed up
-// unbrandB(secretA);
-// unbrandA(secretB);
+secretA = secretB; // ✅ No chance of getting these mixed up
+unbrandB(secretA);
+unbrandA(secretB);
 
-// // back to our original values
-// let revealedA = unbrandA(secretA);
-// let revealedB = unbrandB(secretB);
+// back to our original values
+let revealedA = unbrandA(secretA);
+let revealedB = unbrandB(secretB);
 
 // 💡 PROTIP - always brand/unbrand casting in exactly one place.
 
