@@ -32,19 +32,19 @@ async function logWhenResolved(p: Promise<any>) {
  * We'll do htis with a type guard.
  */
 
-// myUnknown.split(", "); // 🚨 ERROR
+myUnknown.split(", "); // 🚨 ERROR
 
 /**
  * (4) Built-in type guards
  */
-// if (typeof myUnknown === "string") {
-//   // in here, myUnknown is of type string
-//   myUnknown.split(", "); // ✅ OK
-// }
-// if (myUnknown instanceof Promise) {
-//   // in here, myUnknown is of type Promise<any>
-//   myUnknown.then(x => console.log(x));
-// }
+if (typeof myUnknown === "string") {
+  // in here, myUnknown is of type string
+  myUnknown.split(", "); // ✅ OK
+}
+if (myUnknown instanceof Promise) {
+  // in here, myUnknown is of type Promise<any>
+  myUnknown.then(x => console.log(x));
+}
 
 /**
  * (5) User-defined type guards
@@ -52,19 +52,23 @@ async function logWhenResolved(p: Promise<any>) {
  */
 
 // // 💡 Note return type
-// function isHasEmail(x: any): x is HasEmail {
-//   return typeof x.name === "string" && typeof x.email === "string";
-// }
+function isHasEmail(x: any): x is HasEmail {
+  return typeof x.name === "string" && typeof x.email === "string";
+}
 
-// if (isHasEmail(myUnknown)) {
-//   // In here, myUnknown is of type HasEmail
-//   console.log(myUnknown.name, myUnknown.email);
-// }
+if (isHasEmail(myUnknown)) {
+  // In here, myUnknown is of type HasEmail
+  console.log(myUnknown.name, myUnknown.email);
+}
 
-// // my most common guard
-// function isDefined<T>(arg: T | undefined): arg is T {
-//   return typeof arg !== "undefined";
-// }
+// my most common guard
+function isDefined<T>(arg: T | undefined): arg is T {
+  return typeof arg !== "undefined";
+}
+
+const list = ['a', 'b', 'c', undefined, 'd'];
+const filtered = list.filter(isDefined)
+
 
 // // NEW TS 3.7: assertion-based type guards!
 // function assertIsStringArray(arr: any[]): asserts arr is string[] {
@@ -83,9 +87,9 @@ async function logWhenResolved(p: Promise<any>) {
  * -   Look how we can get mixed up below
  */
 
-// let aa: unknown = 41;
-// let bb: unknown = ["a", "string", "array"];
-// bb = aa; // 🚨 yikes
+let aa: unknown = 41;
+let bb: unknown = ["a", "string", "array"];
+bb = aa; // 🚨 yikes
 
 /**
  * (7) Alternative to unknowns - branded types
