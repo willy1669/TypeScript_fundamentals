@@ -18,7 +18,7 @@ const y: bar = {}; // bar is in the type position (LHS).
 // // how to test for a namespace (hover over baz symbol)
 baz;
 
-// export { foo, bar, baz }; // all are importable/exportable
+export { foo, bar, baz }; // all are importable/exportable
 
 /**
  * (2) Functions and variables are purely values.
