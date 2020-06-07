@@ -161,20 +161,21 @@ if (typeof x === "string") {
  * (9) We can use this to our advantage to create exhaustive conditionals and switches
  */
 
-// class UnreachableError extends Error {
-//   constructor(val: never, message: string) {
-//     super(`TypeScript thought we could never end up here\n${message}`);
-//   }
-// }
+class UnreachableError extends Error {
+  constructor(val: never, message: string) {
+    super(`TypeScript thought we could never end up here\n${message}`);
+  }
+}
 
-// let y = 4 as string | number;
+let y = 4 as string | number;
 
-// if (typeof y === "string") {
-//   // y is a string here
-//   y.split(", ");
-// } else if (typeof y === "number") {
-//   // y is a number here
-//   y.toFixed(2);
-// } else {
-//   throw new UnreachableError(y, "y should be a string or number");
-// }
+if (typeof y === "string") {
+  // y is a string here
+  y.split(", ");
+} else if (typeof y === "number") {
+  // y is a number here
+  y.toFixed(2);
+} else {
+  throw new UnreachableError(y, "y should be a string or number");
+}
+ 
