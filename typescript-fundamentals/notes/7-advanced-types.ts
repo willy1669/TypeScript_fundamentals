@@ -68,7 +68,7 @@ hasThen.then;
  * (6) Extract lets us obtain a subset of types that are assignable to something
  */
 
-// type OnlyStrings = Extract<"a" | "b" | 1 | 2, number>;
+type OnlyStrings = Extract<"a" | "b" | 1 | 2, number>;
 
 /**
  * (7) Exclude lets us obtain a subset of types that are NOT assignable to something
