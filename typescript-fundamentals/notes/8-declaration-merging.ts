@@ -24,8 +24,8 @@ export { foo, bar, baz }; // all are importable/exportable
  * (2) Functions and variables are purely values.
  * -   Their types may only be extracted using type queries
  */
-// const xx = 4;
-// const yy: typeof xx = 4;
+const xx = 4;
+const yy: typeof xx = 4;
 
 /**
  * (3) Interfaces are purely types
