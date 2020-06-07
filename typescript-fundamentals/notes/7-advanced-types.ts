@@ -28,12 +28,12 @@ type AllCommValues = CommunicationMethods[keyof CommunicationMethods];
  * (2) Type queries allow us to obtain the type from a value using typeof
  */
 
-// const alreadyResolvedNum = Promise.resolve(4);
+const alreadyResolvedNum = Promise.resolve(4);
 
-// type ResolveType = typeof Promise.resolve;
+type ResolveType = typeof Promise.resolve;
 
-// const x: ResolveType = Promise.resolve;
-// x(42).then(y => y.toPrecision(2));
+const x: ResolveType = Promise.resolve;
+x(42).then(y => y.toPrecision(2));
 
 /**
  * (3) Conditional types allow for the use of a ternary operator w/ types
