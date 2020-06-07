@@ -6,13 +6,13 @@ import { HasEmail } from "./1-basics";
  * (1) "Top types" are types that can hold any value. Typescript has two of them
  */
 
-// let myAny: any = 32;
-// let myUnknown: unknown = "hello, unknown";
+let myAny: any = 32;
+let myUnknown: unknown = "hello, unknown";
 
-// Note that we can do whatever we want with an any, but nothing with an unknown
+//Note that we can do whatever we want with an any, but nothing with an unknown
 
-// myAny.foo.bar.baz;
-// myUnknown.foo;
+myAny.foo.bar.baz;
+myUnknown.foo;
 
 /**
  * (2) When to use `any`
