@@ -16,7 +16,7 @@ const x = foo; // foo is in the value position (RHS).
 const y: bar = {}; // bar is in the type position (LHS).
 
 // // how to test for a namespace (hover over baz symbol)
-// baz;
+baz;
 
 // export { foo, bar, baz }; // all are importable/exportable
 
