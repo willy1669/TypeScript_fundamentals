@@ -3,11 +3,11 @@
  * -   can be associated with three things: value, type and namespace
  */
 
-// function foo() {}
-// interface bar {}
-// namespace baz {
-//   export const biz = "hello";
-// }
+function foo() {}
+interface bar {}
+namespace baz {
+  export const biz = "hello";
+}
 
 // // how to test for a value
 // const x = foo; // foo is in the value position (RHS).
