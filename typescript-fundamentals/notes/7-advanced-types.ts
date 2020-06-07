@@ -40,12 +40,12 @@ x(42).then(y => y.toPrecision(2));
  * We can also extract type parameters using the _infer_ keyword
  */
 
-// type EventualType<T> = T extends Promise<infer S> // if T extends Promise<any>
-//   ? S // extract the type the promise resolves to
-//   : T; // otherwise just let T pass through
+type EventualType<T> = T extends Promise<infer S> // if T extends Promise<any>
+  ? S // extract the type the promise resolves to
+  : T; // otherwise just let T pass through
 
-// let a: EventualType<Promise<number>>;
-// let b: EventualType<number[]>;
+let a: EventualType<Promise<number>>;
+let b: EventualType<number[]>;
 
 //== Built-in Utility Types ==//
 
