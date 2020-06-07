@@ -139,22 +139,23 @@ let revealedB = unbrandB(secretB);
  */
 // let n: never = 4;
 
+
 /**
  * A common place where you'll end up with a never
  * is through narrowing exhaustively
  */
 
-// let x = "abc" as string | number;
+let x = "abc" as string | number;
 
-// if (typeof x === "string") {
-//   // x is a string here
-//   x.split(", ");
-// } else if (typeof x === "number") {
-//   // x is a number here
-//   x.toFixed(2);
-// } else {
-//   // x is a never here
-// }
+if (typeof x === "string") {
+  // x is a string here
+  x.split(", ");
+} else if (typeof x === "number") {
+  // x is a number here
+  x.toFixed(2);
+} else {
+  // x is a never here
+}
 
 /**
  * (9) We can use this to our advantage to create exhaustive conditionals and switches
