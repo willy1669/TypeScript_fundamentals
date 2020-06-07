@@ -87,9 +87,9 @@ const filtered = list.filter(isDefined)
  * -   Look how we can get mixed up below
  */
 
-// let aa: unknown = 41;
-// let bb: unknown = ["a", "string", "array"];
-// bb = aa; // 🚨 yikes
+let aa: unknown = 41;
+let bb: unknown = ["a", "string", "array"];
+bb = aa; // 🚨 yikes
 
 /**
  * (7) Alternative to unknowns - branded types
