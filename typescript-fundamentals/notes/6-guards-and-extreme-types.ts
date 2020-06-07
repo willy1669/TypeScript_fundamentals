@@ -52,16 +52,16 @@ if (myUnknown instanceof Promise) {
  */
 
 // // 💡 Note return type
-// function isHasEmail(x: any): x is HasEmail {
-//   return typeof x.name === "string" && typeof x.email === "string";
-// }
+function isHasEmail(x: any): x is HasEmail {
+  return typeof x.name === "string" && typeof x.email === "string";
+}
 
-// if (isHasEmail(myUnknown)) {
-//   // In here, myUnknown is of type HasEmail
-//   console.log(myUnknown.name, myUnknown.email);
-// }
+if (isHasEmail(myUnknown)) {
+  // In here, myUnknown is of type HasEmail
+  console.log(myUnknown.name, myUnknown.email);
+}
 
-// // my most common guard
+// my most common guard
 // function isDefined<T>(arg: T | undefined): arg is T {
 //   return typeof arg !== "undefined";
 // }
