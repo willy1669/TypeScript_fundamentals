@@ -17,12 +17,12 @@ const program = ts.createProgram({
 });
 
 // // (2) Get the non-declaration (.d.ts) source files (.ts)
-// const nonDeclFiles = program
-//   .getSourceFiles()
-//   .filter(sf => !sf.isDeclarationFile);
+const nonDeclFiles = program
+  .getSourceFiles()
+  .filter(sf => !sf.isDeclarationFile);
 
-// // (3) get the type-checker
-// const checker = program.getTypeChecker();
+// (3) get the type-checker
+const checker = program.getTypeChecker();
 
 // /**
 //  * (4) use the type checker to obtain the
